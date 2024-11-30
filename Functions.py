@@ -44,25 +44,89 @@ def free():
     else:
         print('Connection unsuccessful')
 
-def sub():
+def submon():
     global subs
     global day
     c = mc.connect(host='localhost', user='root', password='dpsbn@123', database='school')
     if c.is_connected():
         cur=c.cursor()
         for i, j in zip(freeclasses, absent):
-            q='SELECT TEACHER, CLASSPERIOD FROM {}TT WHERE CLASSPERIOD NOT LIKE %s AND TEACHER!=%s'.format(day)
+            q='SELECT TEACHER, CLASSPERIOD FROM MONDAYTT WHERE CLASSPERIOD NOT LIKE %s AND TEACHER!=%s'.format(day)
             cur.execute(q, (i[-1][-1], j))
             l=cur.fetchall()
             for k in l:
                 print(k[0])
-                #if k[0][0] not in absent and k[0][0] not in subs:
-                 #  subs.append(k)
+                if k[0] not in absent:
+                    if k[0] not in subs:
+                        subs.append(k)
+
+def subtue():
+    global subs
+    global day
+    c = mc.connect(host='localhost', user='root', password='dpsbn@123', database='school')
+    if c.is_connected():
+        cur=c.cursor()
+        for i, j in zip(freeclasses, absent):
+            q='SELECT TEACHER, CLASSPERIOD FROM TUESDAYTT WHERE CLASSPERIOD NOT LIKE %s AND TEACHER!=%s'
+            cur.execute(q, (i[-1][-1], j))
+            l=cur.fetchall()
+            for k in l:
+                print(k[0])
+                if k[0] not in absent:
+                    if k[0] not in subs:
+                        subs.append(k)
+
+def subwed():
+    global subs
+    global day
+    c = mc.connect(host='localhost', user='root', password='dpsbn@123', database='school')
+    if c.is_connected():
+        cur=c.cursor()
+        for i, j in zip(freeclasses, absent):
+            q='SELECT TEACHER, CLASSPERIOD FROM WEDNESDAYTT WHERE CLASSPERIOD NOT LIKE %s AND TEACHER!=%s'
+            cur.execute(q, (i[-1][-1], j))
+            l=cur.fetchall()
+            for k in l:
+                print(k[0])
+                if k[0] not in absent:
+                    if k[0] not in subs:
+                        subs.append(k)
+
+def subthurs():
+    global subs
+    global day
+    c = mc.connect(host='localhost', user='root', password='dpsbn@123', database='school')
+    if c.is_connected():
+        cur=c.cursor()
+        for i, j in zip(freeclasses, absent):
+            q='SELECT TEACHER, CLASSPERIOD FROM THURSDAYTT WHERE CLASSPERIOD NOT LIKE %s AND TEACHER!=%s'
+            cur.execute(q, (i[-1][-1], j))
+            l=cur.fetchall()
+            for k in l:
+                print(k[0])
+                if k[0] not in absent:
+                    if k[0] not in subs:
+                        subs.append(k)
+
+def subfri():
+    global subs
+    global day
+    c = mc.connect(host='localhost', user='root', password='dpsbn@123', database='school')
+    if c.is_connected():
+        cur=c.cursor()
+        for i, j in zip(freeclasses, absent):
+            q='SELECT TEACHER, CLASSPERIOD FROM FRIDAYTT WHERE CLASSPERIOD NOT LIKE %s AND TEACHER!=%s'
+            cur.execute(q, (i[-1][-1], j))
+            l=cur.fetchall()
+            for k in l:
+                print(k[0])
+                if k[0] not in absent:
+                    if k[0] not in subs:
+                        subs.append(k)
 
 getday()
 attendance()
 free()
-sub()
 
 print(len(freeclasses))
 print(subs)
