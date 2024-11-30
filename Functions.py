@@ -47,17 +47,16 @@ def free():
 def submon():
     global subs
     global day
-    L=[]
     c = mc.connect(host='localhost', user='root', password='dpsbn@123', database='school')
     if c.is_connected():
         cur=c.cursor()
+        print('Subs befor for: ', subs)
         for i, j in zip(freeclasses, absent):
             q='SELECT TEACHER, CLASSPERIOD FROM MONDAYTT WHERE CLASSPERIOD NOT LIKE %s AND TEACHER!=%s'.format(day)
             cur.execute(q, (i[-1][-1], j))
             l=cur.fetchall()
             for k in l:
-                L.append(k)
-            for k in L:
+                # print(k[0])
                 if k[0] not in absent and k[0] not in subs:
                     subs.append(k)
 
@@ -76,7 +75,8 @@ def subtue():
                 L.append(k)
             for k in L:
                 if k[0] not in absent and k[0] not in subs:
-                    subs.append(k)
+                    print('adding: ', (k[0]))
+                    subs.append(k[0])
 
 def subwed():
     global subs
@@ -135,4 +135,5 @@ free()
 submon()
 
 print(len(freeclasses))
-print(subs)
+for subsElement in subs:
+    print(subsElement)
