@@ -1,0 +1,4 @@
+absent=[]
+freeclasses=[] 
+subs=[]
+day=''

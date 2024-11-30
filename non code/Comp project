@@ -1,0 +1,6 @@
+Comp project
+
+db school with tables:
+	departments, primary key dpt
+	teachers dept wise, foreign key dpt
+	classes of tchr, foreign key tchrname
