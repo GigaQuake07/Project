@@ -52,7 +52,7 @@ def submon():
         cur=c.cursor()
         print('Subs befor for: ', subs)
         for i, j in zip(freeclasses, absent):
-            q='SELECT TEACHER, CLASSPERIOD FROM MONDAYTT WHERE CLASSPERIOD NOT LIKE %s AND TEACHER!=%s'.format(day)
+            q='SELECT TEACHER, CLASSPERIOD FROM MONDAYTT WHERE CLASSPERIOD NOT LIKE %s AND TEACHER!=%s'
             cur.execute(q, (i[-1][-1], j))
             l=cur.fetchall()
             for k in l:
