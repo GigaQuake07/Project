@@ -56,14 +56,11 @@ def submon():
             cur.execute(q, (i[-1][-1], j))
             l=cur.fetchall()
             for k in l:
-                # print(k[0])
-                if k[0] not in absent and k[0] not in subs:
-                    subs.append(k)
+                subs.append(k)
 
 def subtue():
     global subs
     global day
-    L=[]
     c = mc.connect(host='localhost', user='root', password='dpsbn@123', database='school')
     if c.is_connected():
         cur=c.cursor()
@@ -72,16 +69,11 @@ def subtue():
             cur.execute(q, (i[-1][-1], j))
             l=cur.fetchall()
             for k in l:
-                L.append(k)
-            for k in L:
-                if k[0] not in absent and k[0] not in subs:
-                    print('adding: ', (k[0]))
-                    subs.append(k[0])
-
+                subs.append(k)
+            
 def subwed():
     global subs
     global day
-    L=[]
     c = mc.connect(host='localhost', user='root', password='dpsbn@123', database='school')
     if c.is_connected():
         cur=c.cursor()
@@ -90,15 +82,11 @@ def subwed():
             cur.execute(q, (i[-1][-1], j))
             l=cur.fetchall()
             for k in l:
-                L.append(k)
-            for k in L:
-                if k[0] not in absent and k[0] not in subs:
-                    subs.append(k)
+                subs.append(k)
 
 def subthurs():
     global subs
     global day
-    L=[]
     c = mc.connect(host='localhost', user='root', password='dpsbn@123', database='school')
     if c.is_connected():
         cur=c.cursor()
@@ -107,15 +95,11 @@ def subthurs():
             cur.execute(q, (i[-1][-1], j))
             l=cur.fetchall()
             for k in l:
-                L.append(k)
-            for k in L:
-                if k[0] not in absent and k[0] not in subs:
-                    subs.append(k)
+                subs.append(k)
 
 def subfri():
     global subs
     global day
-    L=[]
     c = mc.connect(host='localhost', user='root', password='dpsbn@123', database='school')
     if c.is_connected():
         cur=c.cursor()
@@ -124,16 +108,9 @@ def subfri():
             cur.execute(q, (i[-1][-1], j))
             l=cur.fetchall()
             for k in l:
-                L.append(k)
-            for k in L:
-                if k[0] not in absent and k[0] not in subs:
-                    subs.append(k)
+                subs.append(k)
 
 getday()
 attendance()
 free()
 submon()
-
-print(len(freeclasses))
-for subsElement in subs:
-    print(subsElement)
