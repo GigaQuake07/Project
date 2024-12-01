@@ -110,7 +110,3 @@ def subfri():
             for k in l:
                 subs.append(k)
 
-getday()
-attendance()
-free()
-submon()
