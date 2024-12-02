@@ -55,10 +55,7 @@ def submon():
             cur.execute(q, (i[-1][-1], j))
             l=cur.fetchall()
             for k in l:
-                print(k[0])
-                if k[0] not in absent:
-                    if k[0] not in subs:
-                        subs.append(k)
+                subs.append(k)
 
 def subtue():
     global subs
@@ -71,10 +68,7 @@ def subtue():
             cur.execute(q, (i[-1][-1], j))
             l=cur.fetchall()
             for k in l:
-                print(k[0])
-                if k[0] not in absent:
-                    if k[0] not in subs:
-                        subs.append(k)
+                subs.append(k)
 
 def subwed():
     global subs
@@ -87,10 +81,7 @@ def subwed():
             cur.execute(q, (i[-1][-1], j))
             l=cur.fetchall()
             for k in l:
-                print(k[0])
-                if k[0] not in absent:
-                    if k[0] not in subs:
-                        subs.append(k)
+                subs.append(k)
 
 def subthurs():
     global subs
@@ -103,10 +94,7 @@ def subthurs():
             cur.execute(q, (i[-1][-1], j))
             l=cur.fetchall()
             for k in l:
-                print(k[0])
-                if k[0] not in absent:
-                    if k[0] not in subs:
-                        subs.append(k)
+                subs.append(k)
 
 def subfri():
     global subs
@@ -119,14 +107,4 @@ def subfri():
             cur.execute(q, (i[-1][-1], j))
             l=cur.fetchall()
             for k in l:
-                print(k[0])
-                if k[0] not in absent:
-                    if k[0] not in subs:
-                        subs.append(k)
-
-getday()
-attendance()
-free()
-
-print(len(freeclasses))
-print(subs)
+                subs.append(k)
