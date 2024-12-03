@@ -1,7 +1,14 @@
 import mysql.connector as mc
 from variables import *
-from main import day
 
+def getday():
+    global Day
+    global day
+    Day=input('Enter day: ')
+    day=Day.lower()
+    while day not in ['monday','tuesday','wednesday','thursday','friday']:
+        Day=input('Enter day: ')
+        day=Day.lower()
 
 def attendance():
     global absent
