@@ -1,6 +1,6 @@
 from Functions import *
 
-gettday()
+getday()
 attendance()
 free()
 

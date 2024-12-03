@@ -112,10 +112,3 @@ def subfri():
             l=cur.fetchall()
             for k in l:
                 subs.append(k)
-
-getday()
-attendance()
-free()
-
-print(len(freeclasses))
-print(subs)
