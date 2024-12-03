@@ -69,8 +69,11 @@ def subtue():
             cur.execute(q, (i[-1][-1], j))
             l=cur.fetchall()
             for k in l:
-                subs.append(k)
-            
+                print(k[0])
+                if k[0] not in absent:
+                    if k[0] not in subs:
+                        subs.append(k)
+
 def subwed():
     global subs
     global day
@@ -110,3 +113,9 @@ def subfri():
             for k in l:
                 subs.append(k)
 
+getday()
+attendance()
+free()
+
+print(len(freeclasses))
+print(subs)
