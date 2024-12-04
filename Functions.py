@@ -5,10 +5,10 @@ def getday():
     global Day
     global day
     Day=input('Enter day: ')
-    day=Day.lower()
+    day=Day.upper()
     while day not in ['monday','tuesday','wednesday','thursday','friday']:
         Day=input('Enter day: ')
-        day=Day.lower()
+        day=Day.upper()
 
 def attendance():
     global absent

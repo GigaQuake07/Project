@@ -1,6 +1,7 @@
 from Functions import *
 
 day=input('Enter day: ')
+day=day.upper()
 attendance()
 free()
 
