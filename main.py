@@ -1,27 +1,31 @@
 from Functions import *
 
 day=input('Enter day: ')
-day=day.upper()
+day=day.lower()
 attendance()
-free()
 
 if day=='monday':
-  submon()
+  monday()
   for i, j in zip(freeclasses, subs):
-    print(j[0], 'in', i)
+    if j[-1][-1]!=i[-1][-1]:
+      print(j[0], 'in', i[-1])
 elif day=='tuesday':
-  subtue()
+  tuesday()
   for i, j in zip(freeclasses, subs):
-    print(j[0], 'in', i)
+    if i[-1][-1]!=j[-1][-1]:
+      print(j[0], 'in', i[-1])
 elif day=='wednesday':
-  subwed()
+  wednesday()
   for i, j in zip(freeclasses, subs):
-    print(j[0], 'in', i)
+    if i[-1][-1]!=j[-1][-1]:
+      print(j[0], 'in', i[-1])
 elif day=='thursday':
-  subthurs()
+  thursday()
   for i, j in zip(freeclasses, subs):
-    print(j[0], 'in', i)
+    if i[-1][-1]!=j[-1][-1]:
+      print(j[0], 'in', i[-1])
 elif day=='friday':
-  subfri()
+  friday()
   for i, j in zip(freeclasses, subs):
-    print(j[0], 'in', i)
+    if i[-1][-1]!=j[-1][-1]:
+      print(j[0], 'in', i[-1])
