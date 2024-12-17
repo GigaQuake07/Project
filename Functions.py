@@ -169,4 +169,3 @@ def friday():
                     subs.append(list(k))
     frifree()
     subfri()
-
