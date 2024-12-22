@@ -23,7 +23,6 @@ def attendance():
 def monday():
     def monfree():
         global freeclasses
-        global day
         c = mc.connect(host='localhost', user='root', password='dpsbn@123', database='school')
         if c.is_connected():
             cur=c.cursor()
@@ -37,7 +36,6 @@ def monday():
             print('Connection unsuccessful')
     def submon():
         global subs
-        global day
         c = mc.connect(host='localhost', user='root', password='dpsbn@123', database='school')
         if c.is_connected():
             cur=c.cursor()

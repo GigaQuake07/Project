@@ -1,4 +1,3 @@
 absent=[]
 freeclasses=[] 
 subs=[]
-day=''
